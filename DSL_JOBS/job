@@ -21,10 +21,5 @@ job('maven_dsl_job_first') {
         ''')
     }
 
-    publishers {
-        archiveArtifacts('target/*.jar')
-        archiveJunit('target/surefire-reports/*.xml')
-        mailer('chethanshettykp@gmail.com', true, true)
-    }
-
+    
 }
