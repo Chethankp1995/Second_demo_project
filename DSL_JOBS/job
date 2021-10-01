@@ -17,12 +17,12 @@ job('maven_dsl_job_first') {
         }
         shell('''
             echo ************RUNNING THE JAR************************
-            java -jar /var/lib/jenkins/workspace/maven_dsl/target/my-app-1.0-SNAPSHOT.jar
+            java -jar /var/lib/jenkins/workspace/maven_dsl/target/*.war
         ''')
        
     }
     publishers {
-        archiveArtifacts('target/*.jar')
+        archiveArtifacts('target/*.war')
         archiveJunit('target/surefire-reports/*.xml')
         mailer('chethanshettykp@gmail.com', true, true)
     }
